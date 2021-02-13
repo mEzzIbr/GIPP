@@ -5,12 +5,12 @@ async function get() {
   const response = await fetch('./Data.json');
   const MyData = await response.json();
   document.querySelector('#food').innerHTML = `
-<datalist onchange='getGI(this.value)'>
+<select onchange='getGI(this.value)'>
 ${
   MyData.map(item => `<option> ${item.name} </option>`)
 }
 
-  </datalist>
+  </select>
  `
 }
 
